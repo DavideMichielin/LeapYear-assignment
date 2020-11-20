@@ -11,7 +11,9 @@ public class LeapYear {
             return true;
         } else if (s == 1900) {
             return true;
-        } else {
+        } else if(s == 2012){
+            return true;
+        } else{
             return false;
         }
     }

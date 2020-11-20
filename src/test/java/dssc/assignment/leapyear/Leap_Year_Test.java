@@ -16,4 +16,10 @@ public class Leap_Year_Test {
         LeapYear year = new LeapYear();
         assertEquals(true, year.isLeap(1900));
     }
+
+    @Test
+    void leap_year_2012() {
+        LeapYear year = new LeapYear();
+        assertEquals(true, year.isLeap(2012));
+    }
 }
