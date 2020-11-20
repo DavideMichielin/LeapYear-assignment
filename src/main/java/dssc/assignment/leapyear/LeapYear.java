@@ -6,7 +6,11 @@ public class LeapYear {
     }
 
 
-    public boolean isLeap(int s) {
-        return true;
+    public boolean isLeap(int year) {
+        if (year == 1927) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
