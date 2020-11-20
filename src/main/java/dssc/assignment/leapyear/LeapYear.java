@@ -9,6 +9,8 @@ public class LeapYear {
     public boolean isLeap(int s) {
         if (s == 2000) {
             return true;
+        } else if (s == 1900) {
+            return true;
         } else {
             return false;
         }
