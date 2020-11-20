@@ -19,4 +19,16 @@ public class Leap_Year_Test {
         LeapYear year = new LeapYear();
         assertEquals(false, year.isLeap(1927));
     }
+
+    @Test
+    void not_leap_year_2001() {
+        LeapYear year = new LeapYear();
+        assertEquals(false, year.isLeap(2001));
+    }
+
+    @Test
+    void not_leap_year_2019() {
+        LeapYear year = new LeapYear();
+        assertEquals(false, year.isLeap(2019));
+    }
 }
