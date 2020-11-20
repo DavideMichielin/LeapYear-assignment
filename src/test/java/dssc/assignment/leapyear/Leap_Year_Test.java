@@ -1,25 +1,16 @@
 package dssc.assignment.leapyear;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Leap_Year_Test {
-    @Test
-    void leap_year_2000() {
+    @ParameterizedTest
+    @CsvSource({"2000, true", "1900, true", "2012, true"})
+    void leap_year_value_true(int number, boolean expected) {
         LeapYear year = new LeapYear();
-        assertEquals(true, year.isLeap(2000));
-    }
-
-    @Test
-    void leap_year_1900() {
-        LeapYear year = new LeapYear();
-        assertEquals(true, year.isLeap(1900));
-    }
-
-    @Test
-    void leap_year_2012() {
-        LeapYear year = new LeapYear();
-        assertEquals(true, year.isLeap(2012));
+        assertEquals(expected, year.isLeap(number));
     }
 }
