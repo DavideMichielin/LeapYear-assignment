@@ -12,7 +12,7 @@ public class Leap_Year_Test {
     private final LeapYear year = new LeapYear();
 
     @ParameterizedTest
-    @CsvSource({"2000, true", "1900, true", "2012, true"})
+    @CsvSource({"2000, true", "1996, true", "2012, true"})
     void leap_year_value_true(int number, boolean expected){
         assertEquals(expected, year.isLeap(number));
     }
@@ -22,19 +22,9 @@ public class Leap_Year_Test {
     void leap_year_value_false(int number){
         assertEquals(false, year.isLeap(number));
     }
-
-    @Test
-    void not_leap_year_1100() {
-        assertEquals(false, year.isLeap(1100));
-    }
-
-    @Test
-    void not_leap_year_2200() {
-        assertEquals(false, year.isLeap(2200));
-    }
-
-    @Test
-    void not_leap_year_1500() {
-        assertEquals(false, year.isLeap(1500));
+    @ParameterizedTest
+    @ValueSource(ints = {1100, 2200, 1500})
+    void not_leap_year_divisible_by_100(int number){
+        assertEquals(false, year.isLeap(number));
     }
 }

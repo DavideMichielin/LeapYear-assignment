@@ -7,16 +7,14 @@ public class LeapYear {
 
 
     public boolean isLeap(int year) {
-        if (year == 1100) {
-            return false;
-        } else if (year == 2200) {
-            return false;
-        } else if (year == 1500) {
-            return false;
-        } else if (year % 4 != 0) {
+        if (year % 4 != 0) {
             return false;
         } else {
-            return true;
+            if (year % 100 == 0 && year % 400 != 0) {
+                return false;
+            } else {
+                return true;
+            }
         }
     }
 }
